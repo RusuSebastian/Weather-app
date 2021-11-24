@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+body{
+    padding:20px;
+}
+nav{
+    border-bottom: #8E24AA 2px solid;
+}
+
+.placeholder{
+    color:gray;
+    position:relative;
+    top: 100px;
+    left:50px;
+}
+
+.app{
+    main{
+        padding:40px 40px 40px 0px;
+        .filter-container{
+            display:flex;
+            .search-box{position:relative;
+             input{
+                 
+             }
+             .sugestions{
+                 position:absolute;
+                 height: 100px;
+                 overflow-y:visible;
+                 overflow-x: hidden;
+                 width: 100%;
+                 div{
+                    background-color: white;
+                    padding:5px 0px;
+                    cursor: pointer;
+                    &:hover{
+                        background-color:#8E24AA ;
+                        color:white;}
+                 }
+             }
+            } 
+            .btn-container{
+                    
+                    margin-left: 50px;
+                }
+    }
+        .info-container{
+            margin-top:30px;
+            h4{
+                margin: 100px 0 0 0;
+            }
+            section{
+                display:flex;
+                height: 400px;
+                width: 80vw;
+                table{
+                    align-self: flex-start;
+                    flex:1;
+                    padding:20px 20px 20px 0;
+                    thead{}
+                    tbody{}
+                    th{
+                        text-align: end;
+                    }
+                    td{
+                        text-align: center;
+                        img{
+                            width: 60px;}
+                        &:first-of-type{
+                            text-align: left;
+                        }
+                        &:nth-of-type(3)::first-letter{
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+                .map-container{
+                    flex:1;
+                    padding:20px;
+                    
+                }
+            }
+        }
+    }
+}
+
+.weather-stations-container{
+    margin-top:50px;
+
+    form{
+        #city,#latitude,#longitude,#altitude{
+            
+            font-size: 0.85rem;
+        }
+        width: 80vw;
+        &.invisible{
+            display:none;
+        }
+        
+    }
+    .add-station{
+        margin:100px 0px;
+    }
+
+    table{
+        margin-top:50px;
+        width: 60vw;
+        text-align: left;
+        thead{
+            tr{color:gray}
+        }
+        tbody{
+           tr{
+               color:#8E24AA;
+               td{
+                   &:first-of-type::first-letter{
+                       text-transform: uppercase;
+                   }
+               }
+           }
+        }
+       
+    }
+}

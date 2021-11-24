@@ -1,0 +1,149 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+body {
+  padding: 20px;
+}
+
+nav {
+  border-bottom: #8E24AA 2px solid;
+}
+
+.placeholder {
+  color: gray;
+  position: relative;
+  top: 100px;
+  left: 50px;
+}
+
+.app main {
+  padding: 40px 40px 40px 0px;
+}
+
+.app main .filter-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.app main .filter-container .search-box {
+  position: relative;
+}
+
+.app main .filter-container .search-box .sugestions {
+  position: absolute;
+  height: 100px;
+  overflow-y: visible;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.app main .filter-container .search-box .sugestions div {
+  background-color: white;
+  padding: 5px 0px;
+  cursor: pointer;
+}
+
+.app main .filter-container .search-box .sugestions div:hover {
+  background-color: #8E24AA;
+  color: white;
+}
+
+.app main .filter-container .btn-container {
+  margin-left: 50px;
+}
+
+.app main .info-container {
+  margin-top: 30px;
+}
+
+.app main .info-container h4 {
+  margin: 100px 0 0 0;
+}
+
+.app main .info-container section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 400px;
+  width: 80vw;
+}
+
+.app main .info-container section table {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 20px 20px 20px 0;
+}
+
+.app main .info-container section table th {
+  text-align: end;
+}
+
+.app main .info-container section table td {
+  text-align: center;
+}
+
+.app main .info-container section table td img {
+  width: 60px;
+}
+
+.app main .info-container section table td:first-of-type {
+  text-align: left;
+}
+
+.app main .info-container section table td:nth-of-type(3)::first-letter {
+  text-transform: uppercase;
+}
+
+.app main .info-container section .map-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 20px;
+}
+
+.weather-stations-container {
+  margin-top: 50px;
+}
+
+.weather-stations-container form {
+  width: 80vw;
+}
+
+.weather-stations-container form #city, .weather-stations-container form #latitude, .weather-stations-container form #longitude, .weather-stations-container form #altitude {
+  font-size: 0.85rem;
+}
+
+.weather-stations-container form.invisible {
+  display: none;
+}
+
+.weather-stations-container .add-station {
+  margin: 100px 0px;
+}
+
+.weather-stations-container table {
+  margin-top: 50px;
+  width: 60vw;
+  text-align: left;
+}
+
+.weather-stations-container table thead tr {
+  color: gray;
+}
+
+.weather-stations-container table tbody tr {
+  color: #8E24AA;
+}
+
+.weather-stations-container table tbody tr td:first-of-type::first-letter {
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=index.css.map */
