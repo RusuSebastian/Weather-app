@@ -5,14 +5,20 @@ import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
+interface InfoForm {
+    city:string;
+    latitude:string;
+    longitude:string;
+    altitude:string;
+}
 const WeatherStations = () =>{
     if(localStorage.getItem("stations")===null){
         localStorage.setItem("stations",JSON.stringify([]));
     }
     const navigate = useNavigate();
     const [formIsActive,setFormIsActive]=useState<boolean>(true);
-    const [localData,setLocalData] =useState<any>([]);
-    const[infoForm,setInfoForm]= useState<any>(
+    const [localData,setLocalData] =useState<Array<any>>([]);
+    const[infoForm,setInfoForm]= useState<InfoForm>(
         { 
           city:"",
           latitude:"",

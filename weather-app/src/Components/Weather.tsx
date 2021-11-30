@@ -19,7 +19,7 @@ const switchButtonVariant = {
 
 const Weather = () => {
     const [weather,setWeather] = useState<any>({});
-    const [weatherFiveDays, setWeatherFiveDays] = useState <any>([]);
+    const [weatherFiveDays, setWeatherFiveDays] = useState <Array<string|number|null|undefined>>([]);
     const [value, setValue] = useState<string | null>();
     const [inputValue, setInputValue] = React.useState('');
     const [btnVariant, setBtnVariant]=useState(switchButtonVariant);
@@ -36,7 +36,9 @@ const Weather = () => {
                 .then(res => res.json())
                 .then(result => {
                     setWeather(result);
-            });
+                })
+                .catch((error)=>alert(error));
+
         }else if (page === "fiveday" && value !== null && inputValue !== ""){
             setBtnVariant({
                 currentWeather:false,
@@ -48,9 +50,9 @@ const Weather = () => {
                 .then(resu => {
                     setWeatherFiveDays(resu.daily);
                 })
+                .catch((error)=>alert(error));
         }
     }
-
     return (
         <>
         <div className="buttons-container">
@@ -98,8 +100,8 @@ const Weather = () => {
                                 /> 
                             </tr> 
                         ):(
-                            weatherFiveDays.slice(1,6).map((item: any)=>(
-                                <tr>
+                            weatherFiveDays.slice(1,6).map((item: any,key:any)=>(
+                                <tr key={key}>
                                     <CurrentWeather 
                                         max={Math.round(item.temp.max)} 
                                         min={Math.round(item.temp.min)} 

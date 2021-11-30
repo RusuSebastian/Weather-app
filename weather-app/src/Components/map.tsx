@@ -7,7 +7,7 @@ const containerStyle = {
 };
 
 interface Map {
-    centers:any;  
+    centers:google.maps.LatLng | google.maps.LatLngLiteral | undefined;  
 }
 function MyComponent({centers}: Map) {
   return (
