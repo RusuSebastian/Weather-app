@@ -1,12 +1,11 @@
-import React from "react";
-import "./Styles/index.css"
-import theme from "./StyledComponents/theme";
-import { ThemeProvider } from "@mui/material";
-import WeatherStations from "./WeatherStations";
-import Weather from "./Weather";
-import Navbar from "./Navigation";
-
+import { ThemeProvider } from '@emotion/react';
+import React from 'react';
 import { Routes, Route} from "react-router-dom";
+import Navbar from './Components/Navigation';
+import Weather from './Components/Weather';
+import WeatherStations from './Components/WeatherStations';
+import theme from "./StyledComponents/Theme";
+import "./Styles/index.css"
 
 
 const NoMatch = () =>{
@@ -18,14 +17,13 @@ const NoMatch = () =>{
 }
 
 function App() {
-
   return (
     <ThemeProvider theme={theme}>
-      <Navbar/>
+      <Navbar></Navbar>
       <Routes>
-        <Route path="/" element={<Weather/>} />
-        <Route path="/weatherStations" element={<WeatherStations/>} />
-        <Route path="*" element={<NoMatch/>} />
+        <Route path="/" element={<Weather/>}/>
+        <Route path="/WeatherStations" element={<WeatherStations/>}/>
+        <Route path="*" element={<NoMatch/>}/>
       </Routes>
     </ThemeProvider>
   );
