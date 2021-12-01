@@ -89,7 +89,7 @@ const Weather = () => {
                 <table>
                     <Thead/>
                     <tbody>
-                        {(btnVariant.currentWeather)?(
+                        {(btnVariant.currentWeather && typeof weather.main != "undefined" )?(
                            <tr>
                                 <CurrentWeather 
                                     max={Math.round(weather.main.temp_max)} 

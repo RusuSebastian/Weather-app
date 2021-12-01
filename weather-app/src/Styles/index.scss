@@ -2,10 +2,14 @@
     box-sizing: border-box;
     margin:0;
 }
-body{padding:20px}
+body{
+    padding:20px
+}
+
 .invisible {
     display:none;
 }
+
 nav{margin-bottom: 20px;}
 .placeholder{
     color:gray;
@@ -50,7 +54,8 @@ section{
             text-align: center;
             position:relative;
             img{
-                width: 70px;}
+                width: 70px;
+            }
             &:first-child{
                 text-align: left;
                 
@@ -82,6 +87,70 @@ section{
             cursor: pointer;
             &:hover{
                 color:red;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1126px) {
+    .buttons-container{
+        flex-direction: column-reverse;
+        .btns-container{
+            margin-bottom: 20px;
+        }
+    }
+    section{
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        .map-container{
+            padding:0px;
+            width: 100%;
+            flex:none;
+            height: 400px;
+        }
+        table{
+            margin-top:20px;
+            flex:0;
+            width: 100%;
+        }
+    }
+    .weather-stations-container{
+        form{
+        width: 400px;
+        height: 370px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+            &.invisible {
+                display:none;
+            }
+        }
+        .add-station{
+            margin:40px 0px;
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 560px) {
+    body{
+        padding:5px;
+        width: 100vw;
+    }
+    .placeholder{
+        position: static;
+        margin-top:10px;
+    }
+    section{
+        width: 95vw;
+    }
+    table{
+        tr:first-child{
+            td:first-child{
+                &::after{
+                   top:50px;
+                }
             }
         }
     }
