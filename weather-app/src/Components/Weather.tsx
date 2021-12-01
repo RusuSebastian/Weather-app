@@ -100,12 +100,12 @@ const Weather = () => {
                                 /> 
                             </tr> 
                         ):(
-                            weatherFiveDays.slice(1,6).map((item: any,key:any)=>(
+                            weatherFiveDays.slice(0,5).map((item: any,key:any)=>(
                                 <tr key={key}>
                                     <CurrentWeather 
                                         max={Math.round(item.temp.max)} 
                                         min={Math.round(item.temp.min)} 
-                                        date={dateBuilder(new Date())} 
+                                        date={dateBuilder(new Date(item.dt*1000))} 
                                         weatherType={item.weather[0].description} 
                                         weatherIcon={item.weather[0].icon}
                                      /> 
