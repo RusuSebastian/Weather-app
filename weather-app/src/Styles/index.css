@@ -2,15 +2,18 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
 body {
   padding: 20px;
 }
 
+.invisible {
+  display: none;
+}
+
 nav {
-  border-bottom: #8E24AA 2px solid;
+  margin-bottom: 20px;
 }
 
 .placeholder {
@@ -20,52 +23,26 @@ nav {
   left: 50px;
 }
 
-.app main {
-  padding: 40px 40px 40px 0px;
-}
-
-.app main .filter-container {
+.buttons-container {
+  width: 50%;
+  margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.app main .filter-container .search-box {
-  position: relative;
+.buttons-container .filter-container {
+  width: 250px;
 }
 
-.app main .filter-container .search-box .sugestions {
-  position: absolute;
-  height: 100px;
-  overflow-y: visible;
-  overflow-x: hidden;
-  width: 100%;
+h3 {
+  margin: 40px 0px;
 }
 
-.app main .filter-container .search-box .sugestions div {
-  background-color: white;
-  padding: 5px 0px;
-  cursor: pointer;
-}
-
-.app main .filter-container .search-box .sugestions div:hover {
-  background-color: #8E24AA;
-  color: white;
-}
-
-.app main .filter-container .btn-container {
-  margin-left: 50px;
-}
-
-.app main .info-container {
-  margin-top: 30px;
-}
-
-.app main .info-container h4 {
-  margin: 100px 0 0 0;
-}
-
-.app main .info-container section {
+section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,77 +50,145 @@ nav {
   width: 80vw;
 }
 
-.app main .info-container section table {
+section table {
   -ms-flex-item-align: start;
       align-self: flex-start;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 20px 20px 20px 0;
 }
 
-.app main .info-container section table th {
+section table tr:first-child td:first-child::after {
+  content: " Today";
+  position: absolute;
+  top: 45px;
+  left: 0px;
+}
+
+section table th {
   text-align: end;
 }
 
-.app main .info-container section table td {
+section table td {
   text-align: center;
+  position: relative;
 }
 
-.app main .info-container section table td img {
-  width: 60px;
+section table td img {
+  width: 70px;
 }
 
-.app main .info-container section table td:first-of-type {
+section table td:first-child {
   text-align: left;
 }
 
-.app main .info-container section table td:nth-of-type(3)::first-letter {
+section table td:nth-of-type(3)::first-letter {
   text-transform: uppercase;
 }
 
-.app main .info-container section .map-container {
+section .map-container {
+  padding: 20px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 20px;
 }
 
-.weather-stations-container {
-  margin-top: 50px;
+.add-station {
+  margin: 0px 0px 40px 0px;
 }
 
-.weather-stations-container form {
-  width: 80vw;
+.station-table {
+  font-size: 18px;
 }
 
-.weather-stations-container form #city, .weather-stations-container form #latitude, .weather-stations-container form #longitude, .weather-stations-container form #altitude {
-  font-size: 0.85rem;
+.station-table th {
+  text-align: start;
+  color: purple;
 }
 
-.weather-stations-container form.invisible {
-  display: none;
+.station-table th, .station-table td {
+  padding: 20px 20px 0px 0px;
 }
 
-.weather-stations-container .add-station {
-  margin: 100px 0px;
+.station-table td:last-child {
+  cursor: pointer;
 }
 
-.weather-stations-container table {
-  margin-top: 50px;
-  width: 60vw;
-  text-align: left;
+.station-table td:last-child:hover {
+  color: red;
 }
 
-.weather-stations-container table thead tr {
-  color: gray;
+@media only screen and (max-width: 1126px) {
+  .buttons-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .buttons-container .btns-container {
+    margin-bottom: 20px;
+  }
+  section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  section .map-container {
+    padding: 0px;
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    height: 400px;
+  }
+  section table {
+    margin-top: 20px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    width: 100%;
+  }
+  .weather-stations-container form {
+    width: 400px;
+    height: 370px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .weather-stations-container form.invisible {
+    display: none;
+  }
+  .weather-stations-container .add-station {
+    margin: 40px 0px;
+  }
 }
 
-.weather-stations-container table tbody tr {
-  color: #8E24AA;
-}
-
-.weather-stations-container table tbody tr td:first-of-type::first-letter {
-  text-transform: uppercase;
+@media only screen and (max-width: 560px) {
+  body {
+    padding: 5px;
+    width: 100vw;
+  }
+  .placeholder {
+    position: static;
+    margin-top: 10px;
+  }
+  section {
+    width: 95vw;
+  }
+  table tr:first-child td:first-child::after {
+    top: 50px;
+  }
 }
 /*# sourceMappingURL=index.css.map */

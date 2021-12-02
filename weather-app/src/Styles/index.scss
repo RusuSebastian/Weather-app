@@ -1,128 +1,157 @@
 *{
     box-sizing: border-box;
     margin:0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
-
 body{
-    padding:20px;
-}
-nav{
-    border-bottom: #8E24AA 2px solid;
+    padding:20px
 }
 
+.invisible {
+    display:none;
+}
+
+nav{margin-bottom: 20px;}
 .placeholder{
     color:gray;
     position:relative;
     top: 100px;
     left:50px;
 }
+.buttons-container{
+    width: 50%;
+    margin-top:40px;
+    display: flex;
+    justify-content: space-between;
+    .filter-container{
+       width:250px ;
+   }
+}
+h3{
+    margin:40px 0px;
+}
 
-.app{
-    main{
-        padding:40px 40px 40px 0px;
-        .filter-container{
-            display:flex;
-            .search-box{position:relative;
-             input{
-                 
-             }
-             .sugestions{
-                 position:absolute;
-                 height: 100px;
-                 overflow-y:visible;
-                 overflow-x: hidden;
-                 width: 100%;
-                 div{
-                    background-color: white;
-                    padding:5px 0px;
-                    cursor: pointer;
-                    &:hover{
-                        background-color:#8E24AA ;
-                        color:white;}
-                 }
-             }
-            } 
-            .btn-container{
-                    
-                    margin-left: 50px;
-                }
-    }
-        .info-container{
-            margin-top:30px;
-            h4{
-                margin: 100px 0 0 0;
-            }
-            section{
-                display:flex;
-                height: 400px;
+section{
+    display:flex;
+    height: 400px;
                 width: 80vw;
-                table{
-                    align-self: flex-start;
-                    flex:1;
-                    padding:20px 20px 20px 0;
-                    thead{}
-                    tbody{}
-                    th{
-                        text-align: end;
-                    }
-                    td{
-                        text-align: center;
-                        img{
-                            width: 60px;}
-                        &:first-of-type{
-                            text-align: left;
-                        }
-                        &:nth-of-type(3)::first-letter{
-                            text-transform: uppercase;
-                        }
-                    }
+    table{
+        align-self: flex-start;
+        flex:1;
+        tr:first-child{
+            td:first-child{
+                &::after{
+                    content:" Today";
+                    position:absolute;
+                    top:45px;
+                    left:0px;
                 }
-                .map-container{
-                    flex:1;
-                    padding:20px;
-                    
-                }
+            }
+        }
+        th{
+            text-align: end;
+        }
+        td{
+            text-align: center;
+            position:relative;
+            img{
+                width: 70px;
+            }
+            &:first-child{
+                text-align: left;
+                
+            }
+            &:nth-of-type(3)::first-letter{
+                text-transform: uppercase;
+            }
+        }
+    }
+    .map-container{
+        padding:20px;
+        flex:1;
+    }
+}
+.add-station{
+    margin:0px 0px 40px 0px;
+}
+.station-table{
+    font-size: 18px;
+    th{
+        text-align: start;
+        color:purple;
+    }
+    th,td{
+        padding:20px 20px 0px 0px;
+    }
+    td{
+        &:last-child{
+            cursor: pointer;
+            &:hover{
+                color:red;
             }
         }
     }
 }
 
-.weather-stations-container{
-    margin-top:50px;
-
-    form{
-        #city,#latitude,#longitude,#altitude{
-            
-            font-size: 0.85rem;
+@media only screen and (max-width: 1126px) {
+    .buttons-container{
+        flex-direction: column-reverse;
+        .btns-container{
+            margin-bottom: 20px;
         }
-        width: 80vw;
-        &.invisible{
-            display:none;
+    }
+    section{
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        .map-container{
+            padding:0px;
+            width: 100%;
+            flex:none;
+            height: 400px;
         }
-        
+        table{
+            margin-top:20px;
+            flex:0;
+            width: 100%;
+        }
     }
-    .add-station{
-        margin:100px 0px;
+    .weather-stations-container{
+        form{
+        width: 400px;
+        height: 370px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+            &.invisible {
+                display:none;
+            }
+        }
+        .add-station{
+            margin:40px 0px;
+        }
     }
+    
+}
 
+@media only screen and (max-width: 560px) {
+    body{
+        padding:5px;
+        width: 100vw;
+    }
+    .placeholder{
+        position: static;
+        margin-top:10px;
+    }
+    section{
+        width: 95vw;
+    }
     table{
-        margin-top:50px;
-        width: 60vw;
-        text-align: left;
-        thead{
-            tr{color:gray}
+        tr:first-child{
+            td:first-child{
+                &::after{
+                   top:50px;
+                }
+            }
         }
-        tbody{
-           tr{
-               color:#8E24AA;
-               td{
-                   &:first-of-type::first-letter{
-                       text-transform: uppercase;
-                   }
-               }
-           }
-        }
-       
     }
 }

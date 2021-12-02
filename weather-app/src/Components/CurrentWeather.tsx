@@ -1,16 +1,11 @@
 import React from "react"
-
-
 interface Props {
-    max:any,
-    min:any,
-    weatherType:any,
-    weatherIcon:any,
-    date:any
+    max:number,
+    min:number,
+    weatherType:string,
+    weatherIcon:string,
+    date:string
 }
-
-
-
 const CurrentWeather: React.FC<Props> = ({max,min,weatherType,weatherIcon,date}) =>{
     return(
         <>

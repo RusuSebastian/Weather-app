@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import React from 'react'
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
-class SimpleMap extends Component {
-  static defaultProps = {
-    center: {
-      lat: 47.1667,
-      lng: 27.6
-    },
-    zoom: 12
-  };
+const containerStyle = {
+  width: '100%',
+  height: '100%'
+};
 
-  render() {
-    return (
-      <div style={{ height: '100%', width: '100%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyCGPtMPh8siT42dwQiYtOXNukd5KLGbvAU"}}
-          center={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          
-        </GoogleMapReact>
-      </div>
-    );
-  }
+interface Map {
+    centers:google.maps.LatLng | google.maps.LatLngLiteral | undefined;  
+}
+function MyComponent({centers}: Map) {
+  return (
+    <LoadScript
+      googleMapsApiKey="AIzaSyCGPtMPh8siT42dwQiYtOXNukd5KLGbvAU"
+    >
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={centers}
+        zoom={10}
+      >
+     
+      </GoogleMap>
+    </LoadScript>
+  )
 }
 
-export default SimpleMap;
+export default React.memo(MyComponent)
